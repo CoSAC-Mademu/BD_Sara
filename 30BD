@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deriva 30</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #FFFDF9;
+      color: #1D1D1F;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: #555;
+      text-align: center;
+    }
+
+    .box {
+      background-color: #ffffff;
+      border: 2px dashed #FFD264;
+      border-radius: 10px;
+      padding: 1.5rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .box p {
+      margin: 0.7rem 0;
+      line-height: 1.5;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 DERIVA 30</h1>
+  <h2>Una cartolina giocabile per i trent'anni</h2>
+
+  <div class="box">
+    <p><strong>Cos'è?</strong> Una piccola deriva urbana. Nessuna meta, solo attenzione. Si gioca quando vuoi.</p>
+
+    <p><strong>Missione:</strong></p>
+    <ul>
+      <li>un dettaglio architettonico strano</li>
+      <li>un odore non identificato</li>
+      <li>un oggetto nel posto sbagliato</li>
+    </ul>
+
+    <p>Ogni 3 cose viste = brindisi mentale automatico.</p>
+    <p>Vale per tutto l'anno dei 30.<br />Può valere anche dopo, se nessuno controlla.</p>
+  </div>
+
+  <footer>
+    Nessun significato obbligatorio. Solo piccoli percorsi.
+  </footer>
+</body>
+</html>
