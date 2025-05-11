@@ -25,7 +25,10 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      background-image: radial-gradient(circle at 10% 20%, rgba(255, 214, 100, 0.1) 0%, transparent 20%);
+      background-image: 
+        linear-gradient(rgba(255, 214, 100, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 214, 100, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
     }
 
     h1 {
@@ -34,14 +37,25 @@
       margin-bottom: 0.3rem;
       text-align: center;
       color: var(--primary);
-      text-shadow: 2px 2px 0 rgba(255, 214, 100, 0.3);
       letter-spacing: 0.05em;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
     }
 
     h2 {
       font-size: clamp(0.9rem, 3.5vw, 1.1rem);
       font-weight: 400;
-      margin-bottom: 2rem;
+      margin: 1rem 0 2rem;
       color: #666;
       text-align: center;
       max-width: 80%;
@@ -50,145 +64,130 @@
 
     .box {
       background-color: var(--card-bg);
-      border: 3px dashed var(--secondary);
-      border-radius: 16px;
+      border: 1px solid rgba(255, 158, 63, 0.3);
+      border-radius: 12px;
       padding: 1.8rem 1.5rem;
       max-width: 500px;
       width: 100%;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
       position: relative;
       overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .box:hover {
-      transform: translateY(-3px);
     }
 
     .box::before {
       content: "";
       position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border: 2px solid rgba(255, 158, 63, 0.2);
-      border-radius: 20px;
-      pointer-events: none;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
     }
 
     .box p {
-      margin: 1rem 0;
+      margin: 1.2rem 0;
       line-height: 1.6;
       text-align: center;
     }
 
-    ul {
-      padding-left: 0;
-      margin: 1.2rem 0;
+    .mission-items {
+      margin: 1.8rem 0;
       text-align: center;
-      list-style-type: none;
     }
 
-    ul li {
-      margin-bottom: 0.8rem;
+    .mission-item {
+      margin-bottom: 1.2rem;
       position: relative;
-      padding-left: 1.5rem;
-      text-align: left;
+      padding: 0.5rem 0;
     }
 
-    ul li::before {
-      content: "•";
+    .mission-item::before {
+      content: "·";
       color: var(--accent);
-      font-size: 1.5rem;
+      font-size: 2rem;
+      line-height: 0;
       position: absolute;
-      left: 0;
-      top: -0.3rem;
+      left: 50%;
+      top: -5px;
+      transform: translateX(-50%);
     }
 
     .highlight {
-      background: linear-gradient(120deg, rgba(255,214,100,0.3) 0%, rgba(255,214,100,0) 80%);
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
       font-weight: 600;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: rgba(255, 214, 100, 0.4);
+      z-index: -1;
     }
 
     footer {
       margin-top: 2.5rem;
-      font-size: 0.85rem;
       color: #888;
       text-align: center;
       font-style: italic;
       font-family: 'Caveat', cursive;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      position: relative;
+      padding-top: 1rem;
     }
 
-    .confetti {
+    footer::before {
+      content: "";
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: var(--secondary);
-      opacity: 0;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #888, transparent);
     }
 
     @media (max-width: 480px) {
       .box {
         padding: 1.5rem 1.2rem;
+        border-radius: 8px;
       }
       
-      ul li {
-        padding-left: 1.2rem;
+      .mission-item {
+        padding: 0.7rem 0;
       }
     }
   </style>
 </head>
 <body>
-  <h1>🎂 DERIVA 30</h1>
-  <h2>Una cartolina giocabile per navigare i trent'anni</h2>
+  <h1>DERIVA 30</h1>
+  <h2>Un manuale tascabile per esplorazioni urbane accidentali</h2>
 
   <div class="box">
-    <p><strong>🎁 Cos'è?</strong> Una piccola deriva urbana. Nessuna meta, solo attenzione fluttuante. Si gioca quando vuoi.</p>
+    <p><strong>🎁 Cos'è?</strong> Un invito a perdere la strada di vista.<br>Niente obiettivi, solo percorsi laterali.</p>
 
-    <p><strong>🗺️ Missione:</strong></p>
-    <ul>
-      <li>Cattura un dettaglio architettonico strano</li>
-      <li>Intercetta un odore non identificato</li>
-      <li>Scova un oggetto nel posto sbagliato</li>
-    </ul>
+    <div class="mission-items">
+      <div class="mission-item">Cerca un dettaglio architettonico che sembra un errore</div>
+      <div class="mission-item">Segui un odore senza identificarlo</div>
+      <div class="mission-item">Trova un oggetto che racconta una storia sbagliata</div>
+      <div class="mission-item">Fotografa un contrasto temporale</div>
+      <div class="mission-item">Ascolta un suono che non dovrebbe esserci</div>
+    </div>
 
-    <p>Ogni <span class="highlight">3 scoperte</span> = brindisi mentale automatico 🥂</p>
-    <p>Vale per tutto l'anno dei 30.<br />Può valere anche dopo, <em>se nessuno controlla</em>.</p>
+    <p>Ogni <span class="highlight">3 scoperte</span> = un brindisi solitario 🥂</p>
+    
+    <p>Completa tutte e 5 le missioni e meriti un dolce<br>o almeno una buona scusa per prenderlo.</p>
+
+    <p>Valido per l'intero anno dei 30.<br />Eventuali estensioni negoziabili.</p>
   </div>
 
   <footer>
-    "Nessun significato obbligatorio. Solo piccoli percorsi che si illuminano per un attimo."
+    "Le città si leggono camminando, i compleanni si contano perdendosi"
   </footer>
-
-  <script>
-    // Simple confetti animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const colors = ['#FFD264', '#FF9E3F', '#FF6B6B', '#A0E7E5', '#B5EAD7'];
-      const box = document.querySelector('.box');
-      
-      for (let i = 0; i < 30; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.top = Math.random() * 100 + '%';
-        confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
-        confetti.style.width = Math.random() * 8 + 5 + 'px';
-        confetti.style.height = Math.random() * 3 + 3 + 'px';
-        box.appendChild(confetti);
-        
-        setTimeout(() => {
-          confetti.style.opacity = '0.7';
-          confetti.style.transition = 'all 0.5s ease';
-          confetti.style.transform = `translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) rotate(${Math.random() * 360}deg)`;
-        }, 100);
-      }
-    });
-  </script>
 </body>
 </html>
