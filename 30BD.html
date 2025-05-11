@@ -7,11 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Fredoka+One&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #9A7B4F; /* sostituito con un beige-marrone tenue */
-      --secondary: #D4B483; /* sostituito con un oro pallido */
-      --accent: #C0A9A0; /* sostituito con un rosa antico */
-      --text: #3E3E3E; /* testo più morbido */
-      --light-bg: #FAF7F2; /* sfondo avorio */
+      --primary: #FF7E5F; /* corallo vivace */
+      --secondary: #FFB347; /* arancio dorato */
+      --accent: #A8D8EA; /* azzurro tenue */
+      --text: #4A4A4A; /* grigio scuro leggero */
+      --light-bg: #FFF9F5; /* bianco con leggera calda */
       --card-bg: #FFFFFF;
     }
     
@@ -26,8 +26,8 @@
       align-items: center;
       min-height: 100vh;
       background-image: 
-        linear-gradient(rgba(180, 165, 140, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(180, 165, 140, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(255, 179, 71, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 179, 71, 0.05) 1px, transparent 1px);
       background-size: 20px 20px;
     }
 
@@ -56,7 +56,7 @@
       font-size: clamp(0.9rem, 3.5vw, 1.1rem);
       font-weight: 400;
       margin: 1rem 0 2rem;
-      color: #7A7A7A; /* grigio più tenue */
+      color: #7A7A7A;
       text-align: center;
       max-width: 80%;
       line-height: 1.4;
@@ -64,12 +64,12 @@
 
     .box {
       background-color: var(--card-bg);
-      border: 1px solid rgba(154, 123, 79, 0.2); /* bordo più tenue */
+      border: 1px solid rgba(255, 126, 95, 0.2);
       border-radius: 12px;
       padding: 1.8rem 1.5rem;
       max-width: 500px;
       width: 100%;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
       position: relative;
       overflow: hidden;
     }
@@ -82,7 +82,7 @@
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
-      opacity: 0.7; /* reso più trasparente */
+      opacity: 0.8;
     }
 
     .box p {
@@ -100,8 +100,8 @@
       margin-bottom: 1.2rem;
       position: relative;
       padding: 0.5rem 0;
-      font-weight: 600; /* aggiunto grassetto alle missioni */
-      color: #5A5A5A; /* colore testo più elegante */
+      font-weight: 600;
+      color: #5A5A5A;
     }
 
     .mission-item::before {
@@ -129,13 +129,13 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background-color: rgba(212, 180, 131, 0.3); /* sottolineatura più tenue */
+      background-color: rgba(255, 179, 71, 0.3);
       z-index: -1;
     }
 
     footer {
       margin-top: 2.5rem;
-      color: #9A9A9A; /* grigio più chiaro */
+      color: #9A9A9A;
       text-align: center;
       font-style: italic;
       font-family: 'Caveat', cursive;
@@ -152,7 +152,7 @@
       transform: translateX(-50%);
       width: 50px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #C0A9A0, transparent); /* linea più tenue */
+      background: linear-gradient(90deg, transparent, #A8D8EA, transparent);
     }
 
     @media (max-width: 480px) {
