@@ -4,86 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deriva 30</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Fredoka:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Fredoka+One&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #FF9E3F;
+      --secondary: #FFD264;
+      --accent: #FF6B6B;
+      --text: #1D1D1F;
+      --light-bg: #FFFDF9;
+      --card-bg: #FFFFFF;
+    }
+    
     body {
-      background-color: #FFFDF9;
-      color: #1D1D1F;
+      background-color: var(--light-bg);
+      color: var(--text);
       font-family: 'Manrope', sans-serif;
       margin: 0;
-      padding: 2rem 1.2rem;
+      padding: 1.5rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
+      background-image: radial-gradient(circle at 10% 20%, rgba(255, 214, 100, 0.1) 0%, transparent 20%);
     }
 
     h1 {
-      font-family: 'Fredoka', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 0.2rem;
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 0.3rem;
       text-align: center;
+      color: var(--primary);
+      text-shadow: 2px 2px 0 rgba(255, 214, 100, 0.3);
+      letter-spacing: 0.05em;
     }
 
     h2 {
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
       font-weight: 400;
       margin-bottom: 2rem;
-      color: #555;
+      color: #666;
       text-align: center;
+      max-width: 80%;
+      line-height: 1.4;
     }
 
     .box {
-      background-color: #ffffff;
-      border: 2px dashed #FFD264;
-      border-radius: 10px;
-      padding: 1.5rem;
+      background-color: var(--card-bg);
+      border: 3px dashed var(--secondary);
+      border-radius: 16px;
+      padding: 1.8rem 1.5rem;
       max-width: 500px;
       width: 100%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-3px);
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid rgba(255, 158, 63, 0.2);
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: -1;
     }
 
     .box p {
-      margin: 0.7rem 0;
-      line-height: 1.5;
+      margin: 1rem 0;
+      line-height: 1.6;
+      text-align: center;
     }
 
     ul {
-      padding-left: 1.2rem;
-      margin: 0.5rem 0 1rem 0;
+      padding-left: 0;
+      margin: 1.2rem 0;
+      text-align: center;
+      list-style-type: none;
     }
 
     ul li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+      text-align: left;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -0.3rem;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(255,214,100,0.3) 0%, rgba(255,214,100,0) 80%);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       font-size: 0.85rem;
       color: #888;
       text-align: center;
+      font-style: italic;
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--secondary);
+      opacity: 0;
+    }
+
+    @media (max-width: 480px) {
+      .box {
+        padding: 1.5rem 1.2rem;
+      }
+      
+      ul li {
+        padding-left: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <h1>🎂 DERIVA 30</h1>
-  <h2>Una cartolina giocabile per i trent'anni</h2>
+  <h2>Una cartolina giocabile per navigare i trent'anni</h2>
 
   <div class="box">
-    <p><strong>Cos'è?</strong> Una piccola deriva urbana. Nessuna meta, solo attenzione. Si gioca quando vuoi.</p>
+    <p><strong>🎁 Cos'è?</strong> Una piccola deriva urbana. Nessuna meta, solo attenzione fluttuante. Si gioca quando vuoi.</p>
 
-    <p><strong>Missione:</strong></p>
+    <p><strong>🗺️ Missione:</strong></p>
     <ul>
-      <li>un dettaglio architettonico strano</li>
-      <li>un odore non identificato</li>
-      <li>un oggetto nel posto sbagliato</li>
+      <li>Cattura un dettaglio architettonico strano</li>
+      <li>Intercetta un odore non identificato</li>
+      <li>Scova un oggetto nel posto sbagliato</li>
     </ul>
 
-    <p>Ogni 3 cose viste = brindisi mentale automatico.</p>
-    <p>Vale per tutto l'anno dei 30.<br />Può valere anche dopo, se nessuno controlla.</p>
+    <p>Ogni <span class="highlight">3 scoperte</span> = brindisi mentale automatico 🥂</p>
+    <p>Vale per tutto l'anno dei 30.<br />Può valere anche dopo, <em>se nessuno controlla</em>.</p>
   </div>
 
   <footer>
-    Nessun significato obbligatorio. Solo piccoli percorsi.
+    "Nessun significato obbligatorio. Solo piccoli percorsi che si illuminano per un attimo."
   </footer>
+
+  <script>
+    // Simple confetti animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const colors = ['#FFD264', '#FF9E3F', '#FF6B6B', '#A0E7E5', '#B5EAD7'];
+      const box = document.querySelector('.box');
+      
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = Math.random() * 100 + '%';
+        confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+        confetti.style.width = Math.random() * 8 + 5 + 'px';
+        confetti.style.height = Math.random() * 3 + 3 + 'px';
+        box.appendChild(confetti);
+        
+        setTimeout(() => {
+          confetti.style.opacity = '0.7';
+          confetti.style.transition = 'all 0.5s ease';
+          confetti.style.transform = `translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) rotate(${Math.random() * 360}deg)`;
+        }, 100);
+      }
+    });
+  </script>
 </body>
 </html>
